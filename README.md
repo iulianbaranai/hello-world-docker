@@ -7,7 +7,7 @@ Steps:
 - Create a working directory
 - Create a file representing your app
 - Create a [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices) describing how the image should be built
-- Build the docker image and tag it with
+- Build the docker image and tag it
 - Cleanup source files
 - Run the image
 

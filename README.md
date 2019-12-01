@@ -4,8 +4,7 @@
 ---
 
 Prerequisites
-- Review files in each directory: text and [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices) describing how the image should be built
-
+- Review files in each directory: text, shell and [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices) describing how the image should be built
 
 Execute your app inside the container
 

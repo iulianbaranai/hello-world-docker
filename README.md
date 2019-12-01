@@ -3,39 +3,30 @@
 
 ---
 
-Steps:
-- Create a working directory
-- Create a file representing your app
-- Create a [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices) describing how the image should be built
-- Build the docker image and tag it
-- Cleanup source files
-- Run the image
+Prerequisites
+- Review files in each directory: text and [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices) describing how the image should be built
+
 
 Execute your app inside the container
+- Build the docker image and tag it as v1
+- Run the image
 
-    mkdir myproject && cd myproject
-    echo "Hello World" > hello.txt
-    echo -e "FROM busybox\nCOPY /hello.txt /" > Dockerfile
-    docker build -t helloapp:v1 . -f Dockerfile
-    cd .. && rm -r myproject
+
+    docker build -t helloapp:v1 ./project1 -f ./project1/Dockerfile
     docker run helloapp:v1 cat hello.txt
 
-Use [CMD](https://docs.docker.com/engine/reference/builder/#cmd) to execute your app when running the image
+Use [CMD](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#cmd) to execute your app when running the image
+- Build the docker image and tag it v2
+- Run the image
 
-    mkdir myproject && cd myproject
-    echo "Hello World" > hello.txt
-    echo "cat hello.txt" > entrypoint.sh
-    echo -e "FROM busybox\nCOPY /hello.txt /\nCOPY /entrypoint.sh /\nRUN chmod +x /entrypoint.sh\nCMD cat hello.txt" > Dockerfile
-    docker build -t helloapp:v2 . -f Dockerfile
-    cd .. && rm -r myproject
+
+    docker build -t helloapp:v2 ./project2 -f ./project2/Dockerfile
     docker run helloapp:v2
 
-Use [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) to execute your app when running the image
+Use [ENTRYPOINT](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#entrypoint) to execute your app when running the image
+- Build the docker image and tag it v3
+- Run the image
 
-    mkdir myproject && cd myproject
-    echo "Hello World" > hello.txt
-    echo "cat hello.txt" > entrypoint.sh
-    echo -e "FROM busybox\nCOPY /hello.txt /\nCOPY /entrypoint.sh /\nRUN chmod +x /entrypoint.sh\nENTRYPOINT /entrypoint.sh" > Dockerfile
-    docker build -t helloapp:v3 . -f Dockerfile
-    cd .. && rm -r myproject
+
+    docker build -t helloapp:v3 ./project3 -f ./project3/Dockerfile
     docker run helloapp:v3

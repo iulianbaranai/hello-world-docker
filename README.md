@@ -4,6 +4,7 @@
 ---
 
 Prerequisites
+- Read [what is a container](https://www.docker.com/resources/what-container)
 - Review files in each directory: text, shell and [Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices) describing how the image should be built
 
 Execute your app inside the container
